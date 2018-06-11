@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/car-registration"
+  name="vehicles-registration-services-car-api" xmlns="http://ws.apache.org/ns/synapse">
+  <resource methods="GET" protocol="http" uri-template="/{carName}/{carModel}/{carColor}">
+    <inSequence>
+      <log description="car-api-initial-log" level="custom">
+        <property name="property_name" value=" GET - Car-API is called"/>
+      </log>
+      <header expression="get-property('uri.var.carColor')" name="color" scope="transport"/>
+      <send>
+        <endpoint key="vehicles-registration-http-get-car-end-point"/>
+      </send>
+    </inSequence>
+    <outSequence>
+      <log level="custom">
+        <property name="property_name" value="car-api - out is hitted"/>
+      </log>
+      <send/>
+    </outSequence>
+    <faultSequence/>
+  </resource>
+</api>

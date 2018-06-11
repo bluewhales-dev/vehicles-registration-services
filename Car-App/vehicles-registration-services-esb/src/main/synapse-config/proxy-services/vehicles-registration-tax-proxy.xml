@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="vehicles-registration-tax-proxy" startOnLoad="true"
+  trace="disable" transports="https http" xmlns="http://ws.apache.org/ns/synapse">
+  <target>
+    <endpoint key="vehicles-registration-tax-endpoint"/>
+    <inSequence/>
+    <outSequence>
+      <validate description="validating-be-respond">
+        <schema key="conf:schema/json/vehicles-registration-tax-json-schema.json"/>
+        <on-fail>
+          <property description="set-error-message"
+            name="custom-error-message" scope="default" type="STRING" value="JSON Validation Failure from TAX API"/>
+          <log level="custom">
+            <property name="validation-failure" value="Validation Failed..........."/>
+          </log>
+          <sequence key="vehicles-registration-json-validation-failure-sequences"/>
+        </on-fail>
+      </validate>
+      <payloadFactory description="setting-out-json" media-type="json">
+        <format>
+					{
+					"VechileRegistrationTAX":$1,
+					"Currency":"LKR"
+					}
+				</format>
+        <args>
+          <arg evaluator="json" expression="$.Tax.Amount"/>
+        </args>
+      </payloadFactory>
+      <send/>
+    </outSequence>
+    <faultSequence/>
+  </target>
+</proxy>

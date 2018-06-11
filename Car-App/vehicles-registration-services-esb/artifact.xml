@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="vehicles-registration-tax-endpoint" groupId="com.example.vehicles-registration-services-esb.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/vehicles-registration-tax-endpoint.xml</file>
+    </artifact>
+    <artifact name="vehicles-registration-tax-proxy" groupId="com.example.vehicles-registration-services-esb.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/vehicles-registration-tax-proxy.xml</file>
+    </artifact>
+    <artifact name="vehicles-registration-json-validation-failure-sequences" groupId="com.example.vehicles-registration-services-esb.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/vehicles-registration-json-validation-failure-sequences.xml</file>
+    </artifact>
+    <artifact name="vehicles-registration-services-car-api" groupId="com.example.vehicles-registration-services-esb.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/vehicles-registration-services-car-api.xml</file>
+    </artifact>
+    <artifact name="vehicles-registration-http-get-car-end-point" groupId="com.example.vehicles-registration-services-esb.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/vehicles-registration-http-get-car-end-point.xml</file>
+    </artifact>
+</artifacts>
