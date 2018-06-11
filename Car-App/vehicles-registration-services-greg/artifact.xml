@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="publish-colleague-v1-cs-schema_json" groupId="com.example.vehicles-registration-services-greg.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>vehicles-registration-tax-json-schema.json</file>
+            <path>/_system/config/schema/json</path>
+            <mediaType>application/json</mediaType>
+        </item>
+    </artifact>
+</artifacts>
